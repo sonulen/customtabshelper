@@ -1,12 +1,12 @@
 pluginManagement {
     repositories {
+        mavenCentral()
         gradlePluginPortal()
         google()
-        mavenCentral()
     }
 }
 
 include(
     ":sample",
-//    ":custom-tabs-helper"
+    ":customtabshelper"
 )

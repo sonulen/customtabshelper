@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lint>
+    <!--region Lint-->
+    <issue id="ObsoleteLintCustomCheck">
+        <ignore path="*.gradle/*" /> <!--We can't fix it in third-party libraries-->
+    </issue>
+    <!--endregion-->
+
+    <!--region Correctness-->
+    <issue id="GradleDependency" severity="ignore" />
+    <issue id="DefaultLocale" severity="ignore" /> <!--False-positive when used with Kotlin-->
+    <!--False-positive: https://issuetracker.google.com/issues/182388985 -->
+    <issue id="InvalidFragmentVersionForActivityResult" severity="ignore"/>
+    <!--False-positive: reacts to graph id in app:startDestination-->
+    <issue id="InvalidNavigation" severity="ignore"/>
+    <!--endregion-->
+
+    <!--region Security-->
+    <!--endregion-->
+
+    <!--region Performance-->
+    <!--This rule should be fixed in Bumblebee: https://issuetracker.google.com/issues/191196334 -->
+    <issue id="UnusedResources" severity="ignore" />
+    <issue id="VectorPath" severity="ignore" />
+    <issue id="Overdraw" severity="ignore" /> <!--We check it ourselves-->
+    <!--endregion-->
+
+    <!--region Usability-->
+    <issue id="IconDipSize" severity="ignore" /> <!--TODO Убрать после фикса тулбара-->
+    <!--endregion-->
+
+    <!--region Accessibility-->
+    <issue id="ContentDescription" severity="ignore" /> <!--We don't care about accessability in this app-->
+    <!--endregion-->
+
+    <!--region Internationalization-->
+    <issue id="MissingTranslation" severity="error" />
+    <!--endregion-->
+</lint>
