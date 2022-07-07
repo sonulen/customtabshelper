@@ -1,0 +1,12 @@
+[versions]
+
+[libraries]
+appcompat = "androidx.appcompat:appcompat:1.4.2"
+constraintlayout = "androidx.constraintlayout:constraintlayout:2.1.4"
+material = "com.google.android.material:material:1.6.1"
+browser = "androidx.browser:browser:1.4.0"
+ktx-viewbinding = "com.redmadrobot.extensions:viewbinding-ktx:4.2.1-0"
+
+[bundles]
+
+[plugins]

@@ -1,7 +1,7 @@
 plugins {
-    id("com.android.library")
-    kotlin("android")
-    kotlin("android.extensions")
+    id(libs.plugins.android.library)
+    id(kotlinx.plugins.kotlin.android.asProvider())
+    id(kotlinx.plugins.kotlin.android.extensions)
 }
 
 android {
@@ -32,10 +32,10 @@ android {
 }
 
 dependencies {
-    api("androidx.browser:browser:1.4.0")
     api(kotlin("stdlib"))
+    api(androidx.browser)
 
-    implementation("com.google.android.material:material:1.6.1")
-    implementation("androidx.appcompat:appcompat:1.4.2")
-    implementation("com.redmadrobot.extensions:viewbinding-ktx:4.2.1-0")
+    implementation(androidx.appcompat)
+    implementation(androidx.material)
+    implementation(androidx.ktx.viewbinding)
 }

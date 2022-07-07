@@ -8,7 +8,7 @@ tasks.withType<io.gitlab.arturbosch.detekt.Detekt>().configureEach {
 tasks.withType<io.gitlab.arturbosch.detekt.DetektCreateBaselineTask>().configureEach {
     this.jvmTarget = "1.8"
 }
-
+// FIXME Можно сделать чтоб детект не прерывался на проекте?
 detekt {
     config = rootProject.files("config/detekt/detekt.yml")
     baseline = file("${projectDir}/config/lint/lint-baseline.xml")

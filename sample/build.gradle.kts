@@ -1,7 +1,8 @@
 plugins {
-    id("com.android.application")
-    id("kotlin-android")
-    id("kotlin-android-extensions")
+    id(libs.plugins.android.application)
+
+    id(kotlinx.plugins.kotlin.android.asProvider())
+    id(kotlinx.plugins.kotlin.android.extensions)
 }
 
 android {
@@ -32,6 +33,7 @@ android {
 dependencies {
     implementation(project(":customtabshelper"))
     implementation(kotlin("stdlib"))
-    implementation("androidx.appcompat:appcompat:1.4.2")
-    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+
+    implementation(androidx.appcompat)
+    implementation(androidx.constraintlayout)
 }
