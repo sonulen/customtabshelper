@@ -37,6 +37,8 @@ public class CustomTabActivityHelper : ServiceConnectionCallback {
      *
      * @param activity         The host activity.
      * @param customTabsIntent a CustomTabsIntent to be used if Custom Tabs is available.
+     * @param uri              Uri
+     * @param fallback         Fallback to opening uri on a webview
      */
     @Suppress("UNUSED_PARAMETER")
     public fun openCustomTab(

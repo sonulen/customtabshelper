@@ -12,6 +12,9 @@ import androidx.browser.customtabs.CustomTabsIntent.SHARE_STATE_OFF
 import com.redmadrobot.customtabshelper.CustomTabActivityHelper
 import kotlinx.android.synthetic.main.activity_main.*
 
+/**
+ * Sample activity
+ */
 class MainActivity : AppCompatActivity() {
 
     private val customTabHelper by lazy { CustomTabActivityHelper() }
