@@ -1,10 +1,12 @@
 pluginManagement {
     repositories {
-        mavenCentral()
         gradlePluginPortal()
         google()
+        mavenCentral()
     }
 }
+
+rootProject.name = "Custom tabs helper"
 
 include(
     ":sample",

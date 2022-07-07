@@ -1,16 +1,25 @@
 plugins {
-//    id("com.osacky.doctor") version "0.8.1"
-    id("com.redmadrobot.android-config") version "0.16"
-    id("com.redmadrobot.detekt") version "0.16"
+    id("com.github.ben-manes.versions") version "0.41.0"
+    id("org.gradle.android.cache-fix") version "2.5.5" apply false
+    id("com.redmadrobot.detekt") version "0.16.2"
+}
+
+buildscript {
+    dependencies {
+        classpath("com.android.tools.build:gradle:7.2.1")
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.10")
+    }
 }
 
 subprojects {
-    apply(plugin = "com.redmadrobot.detekt")
-}
+    repositories {
+        google()
+        mavenLocal()
+    }
 
-redmadrobot {
-    android {
-        minSdk.set(21)
-        targetSdk.set(31)
+    apply(plugin = "com.redmadrobot.detekt")
+
+    plugins.withType<com.android.build.gradle.api.AndroidBasePlugin>() {
+        apply(plugin = "org.gradle.android.cache-fix")
     }
 }
