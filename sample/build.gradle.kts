@@ -3,9 +3,7 @@ import com.android.build.api.dsl.*
 
 plugins {
     id(libs.plugins.android.application)
-
-    id(kotlinx.plugins.kotlin.android.asProvider())
-    id(kotlinx.plugins.kotlin.android.extensions)
+    id(kotlinx.plugins.kotlin.android)
 }
 
 android {
@@ -18,6 +16,12 @@ android {
 
         versionName = "1.0"
         versionCode = 1
+    }
+
+    buildFeatures {
+        buildConfig = false
+        resValues = false
+        viewBinding = true
     }
 
     buildTypes {

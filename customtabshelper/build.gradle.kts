@@ -1,7 +1,6 @@
 plugins {
     id(libs.plugins.android.library)
-    id(kotlinx.plugins.kotlin.android.asProvider())
-    id(kotlinx.plugins.kotlin.android.extensions)
+    id(kotlinx.plugins.kotlin.android)
 }
 
 android {

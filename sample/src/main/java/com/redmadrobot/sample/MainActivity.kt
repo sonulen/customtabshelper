@@ -10,7 +10,7 @@ import androidx.browser.customtabs.CustomTabsIntent
 import androidx.browser.customtabs.CustomTabsIntent.COLOR_SCHEME_LIGHT
 import androidx.browser.customtabs.CustomTabsIntent.SHARE_STATE_OFF
 import com.redmadrobot.customtabshelper.CustomTabActivityHelper
-import kotlinx.android.synthetic.main.activity_main.*
+import com.redmadrobot.sample.databinding.ActivityMainBinding
 
 /**
  * Sample activity
@@ -18,11 +18,15 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity() {
 
     private val customTabHelper by lazy { CustomTabActivityHelper() }
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        button.setOnClickListener { openUrl() }
+
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        binding.button.setOnClickListener { openUrl() }
     }
 
     override fun onStart() {
@@ -39,7 +43,7 @@ class MainActivity : AppCompatActivity() {
     override fun onNewIntent(intent: Intent) {
         val data = intent.data ?: return
         val callback = data.toString()
-        textView.text = "Callback with url $callback"
+        binding.textView.text = "Callback with url $callback"
 
         super.onNewIntent(intent)
     }

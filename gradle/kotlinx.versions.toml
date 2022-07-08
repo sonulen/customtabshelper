@@ -5,8 +5,5 @@ kotlin = "1.6.20"
 # FIXME Почему пришлось в libraries засунуть?
 gradle = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin" , version.ref = "kotlin" }
 
-[bundles]
-
 [plugins]
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
-kotlin-android-extensions = { id = "org.jetbrains.kotlin.android.extensions", version.ref = "kotlin" }

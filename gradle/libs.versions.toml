@@ -6,8 +6,6 @@ detekt = "1.20.0"
 gradle = { module = "com.android.tools.build:gradle", version.ref = "gradleplugin" }
 detekt = { module = "io.gitlab.arturbosch.detekt:detekt-gradle-plugin", version = "1.20.0"}
 
-[bundles]
-
 [plugins]
 android-application = { id = "com.android.application", version.ref = "gradleplugin" }
 android-library = { id = "com.android.library", version.ref = "gradleplugin" }
