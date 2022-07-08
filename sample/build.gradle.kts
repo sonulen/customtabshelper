@@ -1,3 +1,6 @@
+import java.util.*
+import com.android.build.api.dsl.*
+
 plugins {
     id(libs.plugins.android.application)
 
@@ -18,14 +21,32 @@ android {
     }
 
     buildTypes {
-        getByName("release") {
+        release {
             isDebuggable = false
             isMinifyEnabled = true
         }
 
-        getByName("debug") {
+        debug {
             applicationIdSuffix = ".debug"
             isMinifyEnabled = false
+        }
+
+        signingConfigs {
+            val debugStoreFile = rootProject.file("cert/debug.keystore")
+            val debugPropsFile = rootProject.file("cert/debug.properties")
+            val debugProps = Properties()
+            debugPropsFile.inputStream().use(debugProps::load)
+
+            val debugSigningConfig = getByName("debug") {
+                storeFile = debugStoreFile
+                keyAlias = debugProps.getProperty("key_alias")
+                keyPassword = debugProps.getProperty("key_password")
+                storePassword = debugProps.getProperty("store_password")
+            }
+
+            release {
+                signingConfig = debugSigningConfig
+            }
         }
     }
 }

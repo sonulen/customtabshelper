@@ -26,7 +26,7 @@ android {
         buildConfig = false
         resValues = false
         viewBinding = true
-        // why?
+        // FIXME why?
         androidResources = true
     }
 }

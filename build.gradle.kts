@@ -19,7 +19,7 @@ subprojects {
 
     apply(plugin = "detekt-convention")
 
-    plugins.withType<com.android.build.gradle.api.AndroidBasePlugin>() {
+    plugins.withType<com.android.build.gradle.api.AndroidBasePlugin> {
         apply(plugin = rootProject.libs.plugins.cache.fix.get().pluginId)
     }
 }
