@@ -1,16 +1,25 @@
 plugins {
-//    id("com.osacky.doctor") version "0.8.1"
-    id("com.redmadrobot.android-config") version "0.16"
-    id("com.redmadrobot.detekt") version "0.16"
+    alias(libs.plugins.versions)
+    alias(libs.plugins.cache.fix) apply false
+}
+
+buildscript {
+    //  FIXME Почему мне пришлось добавлять их в classpath
+    dependencies {
+        classpath(libs.gradle)
+        classpath(kotlinx.gradle)
+    }
 }
 
 subprojects {
-    apply(plugin = "com.redmadrobot.detekt")
-}
+    repositories {
+        google()
+        mavenCentral()
+    }
 
-redmadrobot {
-    android {
-        minSdk.set(21)
-        targetSdk.set(31)
+    apply(plugin = "detekt-convention")
+
+    plugins.withType<com.android.build.gradle.api.AndroidBasePlugin> {
+        apply(plugin = rootProject.libs.plugins.cache.fix.get().pluginId)
     }
 }

@@ -1,0 +1,9 @@
+[versions]
+kotlin = "1.6.20"
+
+[libraries]
+# FIXME Почему пришлось в libraries засунуть?
+gradle = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin" , version.ref = "kotlin" }
+
+[plugins]
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }

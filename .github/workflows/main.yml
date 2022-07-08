@@ -23,6 +23,6 @@ jobs:
       - name: Run Check
         uses: eskatos/gradle-command-action@v1
         with:
-          arguments: detektAll check
+          arguments: check
           wrapper-cache-enabled: true
           dependencies-cache-enabled: true

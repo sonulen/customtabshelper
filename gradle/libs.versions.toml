@@ -1,0 +1,13 @@
+[versions]
+gradleplugin = "7.2.1"
+detekt = "1.20.0"
+
+[libraries]
+gradle = { module = "com.android.tools.build:gradle", version.ref = "gradleplugin" }
+detekt = { module = "io.gitlab.arturbosch.detekt:detekt-gradle-plugin", version = "1.20.0"}
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "gradleplugin" }
+android-library = { id = "com.android.library", version.ref = "gradleplugin" }
+versions = { id = "com.github.ben-manes.versions", version = "0.42.0" }
+cache-fix = { id = "org.gradle.android.cache-fix", version = "2.5.5" }
